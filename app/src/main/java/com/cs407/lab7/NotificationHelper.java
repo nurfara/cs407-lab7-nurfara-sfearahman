@@ -60,10 +60,12 @@ public class NotificationHelper {
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-        // create a basic notif with specified title & text.
-        // priority used as a fallback if the running Android ver doesn't support notif channels.
+        // Create a basic notif with specified title & text.
+        // Priority used as a fallback if the running Android ver doesn't support notif channels.
+        // Set visibility level of notif to private (only app name of notif can be seen on lock screen).
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setVisibility(NotificationCompat.VISIBILITY_PRIVATE)
                 .setContentTitle(sender)
                 .setContentText(message)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
