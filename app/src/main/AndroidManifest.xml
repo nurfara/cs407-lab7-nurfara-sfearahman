@@ -12,6 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lab7"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
         tools:targetApi="34">
         <receiver android:name=".ReplyReceiver"/>
 
